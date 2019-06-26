@@ -1,0 +1,5 @@
+//.start from beans-web.xml file 
+
+.how to take the latest code dynamically in the pom.xml
+	   so that we dont need to worry about the version 
+	 https://www.baeldung.com/spring-with-maven  

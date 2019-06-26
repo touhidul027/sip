@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+the necessary code, needed to active the spring security 
+
+========================================================================================================================
+beans-security.xml
+
+Copyright (c) 2013 Manning Publications Co.
+
+Willie Wheeler (willie.wheeler@gmail.com)
+
+Book: http://manning.com/wheeler/
+Blog: http://springinpractice.com/
+Code: https://github.com/springinpractice
+========================================================================================================================
+-->
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+<!-- 
+auto-config="true" activate spring security filter,
+use-expressions="true" , to use SpEL in jsp page where security tag is needed 
+ -->
+ 
+		
+	<http auto-config="true" use-expressions="true">
+		<form-login default-target-url="/home.html" />  <!-- it will land at home.html page after login is successfull  -->
+		<remember-me />
+		<logout logout-success-url="/home.html" /> <!--  after logout , it will go to this page  -->
+	</http>
+	
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="juan" password="p@ssword" authorities="user,admin" /> 
+				<user name="elvira" password="p@ssword" authorities="user" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+</beans:beans>
+ 
