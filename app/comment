@@ -1,5 +1,15 @@
 //.start from beans-web.xml file 
 
-.how to take the latest code dynamically in the pom.xml
+//how to take the latest code dynamically in the pom.xml
 	   so that we dont need to worry about the version 
 	 https://www.baeldung.com/spring-with-maven  
+	 
+. <dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>com.springsource.javax.annotation</artifactId>
+		    <version>1.0.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		Not supported scope
+
+. <version>${spring-security.version}</version> properties, is not work for spring-framework section

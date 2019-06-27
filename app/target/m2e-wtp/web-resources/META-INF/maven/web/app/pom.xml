@@ -2,6 +2,7 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
   http://maven.apache.org/maven-v4_0_0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
   <groupId>web</groupId>
   <artifactId>app</artifactId>
@@ -9,6 +10,15 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   <version>0.0.1-SNAPSHOT</version>
   <name>app Maven Webapp</name>
   <url>http://maven.apache.org</url>
+   
+	<properties>
+		<!-- to tell to use java 8 -->
+		<maven.compiler.target>1.8</maven.compiler.target>
+	    <maven.compiler.source>1.8</maven.compiler.source>
+	    <spring-security.version>5.0.6.RELEASE</spring-security.version>
+	    <spring.version>5.0.6.RELEASE</spring.version>
+	</properties>
+	
   
   <dependencies>
     <dependency>
@@ -19,42 +29,100 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     </dependency>
 	
 	<!-- Java dependencies -->
+		<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
 		<dependency>
-			<groupId>javax.annotation</groupId>
-			<artifactId>com.springsource.javax.annotation</artifactId>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <version>1.3.2</version>
 		</dependency>
+
 		
 		<!-- Spring dependencies -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-orm</artifactId>
+			    <version>5.0.6.RELEASE</version>
+			</dependency>
+		
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>org.springframework.orm</artifactId>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		     <version>5.0.6.RELEASE</version>
 		</dependency>
 		
-		<!-- Spring Security dependencies -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>org.springframework.security.config</artifactId>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>5.0.6.RELEASE</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>org.springframework.security.core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>org.springframework.security.taglibs</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>org.springframework.security.web</artifactId>
-		</dependency>
-	
 
 
-    <dependency>
-    	<groupId>javax.servlet</groupId>
-    	<artifactId>servlet-api</artifactId>
-    	<version>2.5</version>
-    </dependency>
+
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>5.0.6.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		    <version>5.0.6.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aop</artifactId>
+		     <version>5.0.6.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>5.0.6.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-expression</artifactId>
+		     <version>5.0.6.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		     <version>5.0.6.RELEASE</version>
+		</dependency>
+				
+		<!-- Spring Security dependencies -->		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>${spring-security.version}</version>
+		    <scope>runtime</scope>
+		</dependency>
+		
+		 <dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>${spring-security.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-taglibs</artifactId>
+		    <version>${spring-security.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>${spring-security.version}</version>
+		</dependency>
+    
+	    <dependency>
+	    	<groupId>javax.servlet</groupId>
+	    	<artifactId>servlet-api</artifactId>
+	    	<version>2.5</version>
+	    </dependency>
+    
   </dependencies>
   
   
@@ -64,7 +132,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<plugins>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
+   				 <artifactId>jetty-maven-plugin</artifactId>
+  				  <version>8.1.0.RC0</version>
 			</plugin>
 		</plugins>	
   </build>
