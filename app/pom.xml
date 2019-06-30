@@ -90,6 +90,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		    <artifactId>spring-web</artifactId>
 		     <version>5.0.6.RELEASE</version>
 		</dependency>
+		
+		<!--  for internal resource view resolver -->
+		<dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-webmvc</artifactId>
+	        <version>5.0.6.RELEASE</version>
+        </dependency>
 				
 		<!-- Spring Security dependencies -->		
 		<dependency>
