@@ -1,6 +1,4 @@
-=note{
-
-}
+//page is made secured, .../se , login will be required
 
 //.start from beans-web.xml file 
 
@@ -20,6 +18,6 @@
 
 . mvn dependency:tree target:investigating 
 
-. how can i know that which spring security like 3.0 or 3.1 I am using
+// how can i know that which spring security like 3.0 or 3.1 I am using
 
-.testing github
+//testing github

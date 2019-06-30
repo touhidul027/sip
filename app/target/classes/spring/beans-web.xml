@@ -22,14 +22,18 @@ Code: https://github.com/springinpractice
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-	
+	  
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler />
 	<mvc:view-controller path="/" view-name="redirect:/home.html" />
 	<mvc:view-controller path="/home.html" view-name="extras/home" />
 	
+	<mvc:view-controller path="/se" view-name="jsp/securePage" />
+	<mvc:view-controller path="/success" view-name="jsp/success" />
+	
+	  
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:viewClass="org.springframework.web.servlet.view.JstlView"
-		p:prefix="/WEB-INF/jsp/"
+		p:prefix="/WEB-INF/"
 		p:suffix=".jsp" />
 </beans>
