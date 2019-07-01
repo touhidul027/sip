@@ -34,7 +34,7 @@ use-expressions="true" , to use SpEL in jsp page where security tag is needed
  
 		
 	<http auto-config="true" use-expressions="true">
-	<intercept-url pattern="/se" access="hasRole('admin')" />  
+	<intercept-url pattern="/se" access="hasRole(admin)" />  
 		<form-login />  <!-- it will land at home.html page after login is successfull  -->
 		<remember-me />
 		<logout logout-success-url="/logoutSuccess" /> <!--  after logout , it will go to this page  -->
@@ -45,7 +45,7 @@ use-expressions="true" , to use SpEL in jsp page where security tag is needed
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="admin" password="{noop}admin" authorities="hasRole(user,admin)" /> 
+				<user name="admin" password="{noop}admin" authorities="admin" /> 
 				<user name="elvira" password="{noop}p@ssword" authorities="user" />
 				<user name="user" password="{noop}user" authorities="user" />				
 			</user-service>
