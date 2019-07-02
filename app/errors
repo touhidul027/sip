@@ -1,4 +1,21 @@
+.Referenced file contains errors (http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd). For more information, right click on the message in the 
+ Problems View and select "Show Details..."
+ [
+ I just put semicolon between these
+ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee ; 
+	http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+ ]
 
+
+// Multiple annotations found at this line:
+	- cvc-complex-type.2.4.c: The matching wildcard is strict, but no declaration can be found for element 'mvc:annotation-
+	 driven'.
+	- schema_reference.4: Failed to read schema document 'http://www.springframework.org/schema/mvc/spring-mvc.xsd', 
+	 because 1) could not find the document; 2) the document could not be read; 3) the root element of the document is not 
+	 <xsd:schema>.
+[
+maven-update-force solved those all problems
+]
 
 .The server understood the request but refuses to authorize it. http://localhost:8080/app/j_spring_security_check
 [

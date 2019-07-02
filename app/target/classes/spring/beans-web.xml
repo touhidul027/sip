@@ -24,13 +24,11 @@ Code: https://github.com/springinpractice
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	  
 	<mvc:annotation-driven />
-	<mvc:default-servlet-handler />
+	<mvc:default-servlet-handler />	 
 	<mvc:view-controller path="/" view-name="redirect:/home.html" />
 	<mvc:view-controller path="/home.html" view-name="extras/home" />
-	<mvc:view-controller path="/login.html" />
-	
-	 
-	<mvc:view-controller path="/success" view-name="jsp/success" />
+	<mvc:view-controller path="/login.html" />   	 
+	<mvc:view-controller path="/success.page" view-name="/success" />
 	
 	  
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
