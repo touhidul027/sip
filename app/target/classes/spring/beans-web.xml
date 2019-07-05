@@ -25,11 +25,9 @@ Code: https://github.com/springinpractice
 	  
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler />	 
-	<mvc:view-controller path="/" view-name="redirect:/home.html" />
-	<mvc:view-controller path="/home.html" view-name="extras/home" />
-	<mvc:view-controller path="/login.html" />   	 
-	<mvc:view-controller path="/success.page" view-name="/success" />
-	
+	<mvc:view-controller path="/" view-name="/home" />
+	<mvc:view-controller path="/home" view-name="/home" />
+	<mvc:view-controller path="/admin" view-name="/privatePage" />
 	  
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:prefix="/WEB-INF/jsp/"

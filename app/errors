@@ -1,4 +1,33 @@
-.Referenced file contains errors (http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd). For more information, right click on the message in the 
+
+
+//java.lang.IllegalArgumentException: Failed to evaluate expression 'ROLE_ADMIN'
+[
+-> cause of access="ROLE_ADMIN"
+cange to access="hasRole('ROLE_ADMIN')"
+]
+
+.http://localhost:8080/app/login.html?failed=true
+[
+	->
+]
+
+//The server understood the request but refuses to authorize it. http://localhost:8080/app/j_spring_security_check
+[
+-> <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+ 	paste it into login.jsp page(customize)
+-> put <csrf disabled="true"/> in beans-security , now it gives another error
+	#http://localhost:8080/app/j_spring_security_check{
+		The origin server did not find a current representation for the target resource or
+		 is not willing to disclose that one exists
+		 [
+		 just put this url into form-login element
+		  login-processing-url="/j_spring_security_check" 
+		 -> but another is come,/login.html?failed=true , even for right url.but great achievement
+		 ]
+	}
+]
+
+//Referenced file contains errors (http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd). For more information, right click on the message in the 
  Problems View and select "Show Details..."
  [
  I just put semicolon between these
@@ -17,17 +46,8 @@
 maven-update-force solved those all problems
 ]
 
-.The server understood the request but refuses to authorize it. http://localhost:8080/app/j_spring_security_check
+//The server understood the request but refuses to authorize it. http://localhost:8080/app/j_spring_security_check
 [
 -> <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
  	paste it into login.jsp page(customize)
 ]
-
-
-.Referenced file contains errors (http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd). For more information, right click on the message in the Problems 
- View and select "Show Details..."
- [
- In home computer : not presented this error
- in office:presented
- status:although program is running
- ]

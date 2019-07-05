@@ -1,4 +1,14 @@
+ spring-framework-bom
+ 
+ Q. how to figure out that one version of maven jar is dependent of another version
+ Q.how to figure out dependency conflicts in maven dependency
+.dependency:analyze plugin goal for analyzing the dependencies:
+.try chapter 03.04 style
+.try https://www.journaldev.com/8718/spring-4-security-mvc-login-logout-example
 
+.Latest stable, Spring Security Module version is “4.0.2.RELEASE”
+.latest spring version is 4.3.11
+.use specific version of spring ,change the spring version
 
 .r&d on maven-dependency-latest-version
 

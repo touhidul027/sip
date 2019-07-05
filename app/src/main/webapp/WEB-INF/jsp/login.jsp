@@ -3,7 +3,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:url var="postLoginUrl" value="/j_spring_security_check" />
+<c:url var="postLoginUrl" value="/login" />
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -13,22 +13,22 @@
 		<h1>Please log in,customizing login form</h1>
 		
 		<form class="main" action="${postLoginUrl}" method="post">
-			<c:if test="${param.failed == true}">
+			<c:if test="${param.error != null}">
 				<div class="warning alert">
 					Your login attempt failed. Please try again, or contact technical support for further assistance.
 				</div>
 			</c:if>
 			
-			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-			
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>						 
+        
 			<div class="panel grid" style="width:420px">
 				<div class="gridRow yui-gf">
 					<div class="fieldLabel yui-u first">Username:</div>
-					<div class="yui-u"><input type="text" name="j_username" class="short" /></div>
+					<div class="yui-u"><input type="text" name="username" class="short" /></div>
 				</div>
 				<div class="gridRow yui-gf">
 					<div class="fieldLabel yui-u first">Password:</div>
-					<div class="yui-u"><input type="password" name="j_password" class="short" /></div>
+					<div class="yui-u"><input type="password" name="password" class="short" /></div>
 				</div>
 				<div class="gridRow yui-gf">
 					<div class="yui-u first"></div>
